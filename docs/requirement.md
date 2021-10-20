@@ -34,10 +34,7 @@ transfer admin's email to customer
 
 # User
 
-Staff:x-special/nautilus-clipboard
-copyx-special/nautilus-clipboard
-copy
-
+Staff:
 Chức năng thống kê, ngoài thống kê room thì thêm thống kê số lượng khách, doanh thu.
 Admin: (Riêng chức năng này có thể làm thêm)
 chức năng quản lý staff và ca trực
