@@ -15,8 +15,7 @@ TQ: Tiên quyết
 | 7   | Login in, Log out      | Đăng nhập, Đăng xuất             | NORMAL        |        |
 | 8   | Account activation     | Xác thực                         | LOW           |        |
 | 9   | Password reset         | Khôi phục                        | LOW           |        |
-| 10  | Init Model             | Room, Room Type, Room Attribute  | NORMAL        | 1      |
-| 11  | Init Model             | Bill, Booking, Contact           | NORMAL        | 1      |
+| 10  | Init Model             | all                              | NORMAL        | 1      |
 | 12  | Add relationship       | Room, Room Type, Room Attribute  | NORMAL        | 1      |
 | 13  | Add relationship       | Bill, Booking, Contact           | NORMAL        | 1      |
 | 14  | Add method             | Add method for all models        | LOW           | 2      |
