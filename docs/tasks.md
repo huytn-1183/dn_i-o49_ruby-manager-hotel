@@ -4,12 +4,12 @@ Mức độ: LOW, NORMAL, HIGH, URGENT, IMMEDIATE
 
 TQ: Tiên quyết
 
-| TT  | Tên                    | Mô tả                            | Ưu tiên       | TQ     |
-| --- | ---------------------- | -------------------------------- | ------------- | ------ |
-| 1   | Database Diagram       | Sơ đồ database                   | **IMMEDIATE** |        |
-| 2   | Class Diagram          | Sơ đồ lớp                        | **IMMEDIATE** |        |
-| 3   | Init project           | Khởi tạo dự án                   | **IMMEDIATE** |        |
-| 4   | Wireframe              | Sơ đồ trạng thái, phát thảo      | URGENT        |        |
+| TT  | Tên                    | Mô tả                            | Ưu tiên       | TQ     | assign |
+| --- | ---------------------- | -------------------------------- | ------------- | ------ | ------ |
+| 1   | Database Diagram       | Sơ đồ database                   | **IMMEDIATE** |        | D      |
+| 2   | Class Diagram          | Sơ đồ lớp                        | **IMMEDIATE** |        | D      |
+| 3   | Init project           | Khởi tạo dự án                   | **IMMEDIATE** |        | H      |
+| 4   | Wireframe              | Sơ đồ trạng thái, phát thảo      | URGENT        |        | H      |
 | 5   | Model users            | Khởi tạo model User              | HIGH          |        |
 | 6   | Sign up                | Đăng ký                          | HIGH          |        |
 | 7   | Login in, Log out      | Đăng nhập, Đăng xuất             | NORMAL        |        |
