@@ -46,3 +46,37 @@ vi:
     formats:
       default: "%d-%m-%Y"
       short: "%d-%m"
+  import: "Nhập"
+  export: "Xuất"
+  bookings_controller:
+    booking_successfull: "Dat phong thanh cong!"
+    booking_fail: "Dat phong that bai!"
+  time:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m"
+  bookings_controller:
+    booking_successfull: "Dat phong thanh cong!"
+    booking_fail: "Dat phong that bai!"
+  datetime:
+    distance_in_words:
+      about_x_hours: "%{count} giờ trước"
+  profile: "Thông tin"
+    bookings_controller:
+      booking_successfull: "Dat phong thanh cong!"
+      booking_fail: "Dat phong that bai!"
+  time:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m"
+  bookings_controller:
+    booking_successfull: "Dat phong thanh cong!"
+    booking_fail: "Dat phong that bai!"
+  datetime:
+    distance_in_words:
+      about_x_hours: "%{count} giờ trước"
+  profile: "Thông tin"
+    bookings_controller:
+      booking_successfull: "Dat phong thanh cong!"
+      booking_fail: "Dat phong that bai!"
+  delete: delete

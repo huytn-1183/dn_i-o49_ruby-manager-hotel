@@ -1,0 +1,20 @@
+<section>
+  <div class="container">
+    <%= render "shared/paginate", object: @rooms %>
+    <h6><%= Room.count %></h6>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t :name %></th>
+          <th scope="col"><%= t :price %></th>
+          <th scope="col"><%= t :level %></th>
+          <th scope="col"><%= t :status %></th>
+          <th scope="col"><%= t :action %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @rooms if @rooms.any? %> 
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,6 +1,8 @@
 class Room < ApplicationRecord
   has_many :room_attribute_groups, dependent: :destroy
   has_many :room_attributes, through: :room_attribute_groups
+  has_many :booking_details, dependent: :destroy
+  has_many :bookings, through: :booking_details
 
   enum level: {normal: 0, superior: 1, vip: 2, luxury: 3}
   enum status: {unavailable: 0, available: 1}
@@ -11,7 +13,7 @@ class Room < ApplicationRecord
   scope :price_sort, ->(sort){order(price: sort || :asc)}
 
   scope :name_search,
-        ->(keyword){where("name LIKE ?", "%#{keyword}%")}
+       ->(keyword){where("rooms.name LIKE ?", "%#{keyword}%")}
 
   scope :has_attributes,
         ->(ids){joins(:room_attributes).where(room_attributes: {id: ids})}
@@ -19,4 +21,22 @@ class Room < ApplicationRecord
   scope :pagination_at,
         ->(page){page(page).per(Settings.digit.length_4)}
 
+  def self.to_csv fields = column_names, options = {}
+    CSV.generate(options) do |csv|
+      csv << fields
+      all.find_each do |room|
+        csv << room.attributes.values_at(*fields)
+      end
+    end
+  end
+
+  def self.import file
+    CSV.foreach(file.path, headers: true) do |row|
+      room_hash = row.to_hash
+      room = find_or_create_by!(id: room_hash["id"],
+                                name: room_hash["name"],
+                                price: room_hash["price"])
+      room.update(room_hash)
+    end
+  end
 end

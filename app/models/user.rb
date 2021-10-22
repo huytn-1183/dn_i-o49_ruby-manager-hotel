@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :bookings, dependent: :destroy
+  belongs_to :contact, optional: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   enum role: {admin: 0, staff: 1, customer: 2}
@@ -12,6 +14,7 @@ class User < ApplicationRecord
            length: {maximum: Settings.digit.length_255,
                     minimum: Settings.digit.length_6},
            format: {with: VALID_EMAIL_REGEX}
+
   has_secure_password
 
   class << self

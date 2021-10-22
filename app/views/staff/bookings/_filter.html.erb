@@ -1,0 +1,10 @@
+<section>
+  <%= form_with method: :get, html: { class:"row gy-3" } do |form| %>
+    <div class="col-6">
+      <%= form.select :status, Booking.statuses, { selected: params[:status] }, { class: "form-select" } %>
+    </div>
+    <div class="col-6">
+      <%= form.submit t(:submit), class: "btn btn-outline-primary w-100" %>
+    </div>
+  <% end %>
+</section>

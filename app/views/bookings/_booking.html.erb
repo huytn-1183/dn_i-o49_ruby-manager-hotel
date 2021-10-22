@@ -1,0 +1,15 @@
+<section>
+  <div class="d-grid gap-2">
+    <hr/>
+    <h5><%= t :infomation %>:
+<%= form_for booking, method: :put, local: true,  html: { class:"gy-3 my-3" } do |form| %>
+      <%= form.submit t(:delete), class: "btn btn-outline-warning" %>
+        <% end %>
+
+      <span class="text-<%= booking_status_color booking %>"><%= booking.status %></span>
+    </h5>
+    <%= render booking.user %>
+    <h5><%= t :detail %></h5>
+
+    <%= render booking.booking_details %>
+</section>

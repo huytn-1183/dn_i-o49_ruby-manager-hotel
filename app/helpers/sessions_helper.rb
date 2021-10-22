@@ -21,8 +21,24 @@ module SessionsHelper
 
   def namespace_bookings_path
     return admin_bookings_path if is_admin?
+    return staff_bookings_path if is_staff?
 
     bookings_path
+  end
+
+  def namespace_rooms_path
+    return admin_rooms_path if is_admin?
+    return staff_rooms_path if is_staff?
+
+    root_path
+  end
+
+  def is_customer?
+    current_user.customer?
+  end
+
+  def is_staff?
+    current_user.staff?
   end
 
   def logged_in?
@@ -45,5 +61,14 @@ module SessionsHelper
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
+  end
+
+  def redirect_back_or default
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end

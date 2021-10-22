@@ -16,15 +16,8 @@
               <p class="card-text"><small class="text-muted"><%= time_ago_in_words @room.created_at %></small></p>
               <h4><%= number_to_currency @room.price %>$</h4>
             </div>
-            <!--  -->
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"><%= t :check_in %></label>
-              <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <label for="exampleInputEmail1" class="form-label"><%= t :check_out %></label>
-              <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <button class="btn btn-primary"><%= t :booking %></button>
-          </div>
+         </div>
+          <%= render "booking_details/form_create" %>
         </div>
       </div>
     </div>

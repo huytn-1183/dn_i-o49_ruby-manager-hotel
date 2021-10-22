@@ -1,0 +1,31 @@
+<section>
+  <div class="container">
+    <div class="row g-3 mb-3">
+      <div class="col-2">
+        <%= link_to t(:export), export_admin_rooms_path(format: "csv"), class: "btn btn-success w-100" %>
+      </div>
+      <div class="col-10">
+        <%= form_tag import_admin_rooms_path, multipart: true, class: "input-group" do %>
+          <%= file_field_tag :file, class: "form-control" %>
+          <%= submit_tag t(:import), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <%= render "shared/paginate", object: @rooms %>
+    <h6><%= Room.count %></h6>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t :name %></th>
+          <th scope="col"><%= t :price %></th>
+          <th scope="col"><%= t :level %></th>
+          <th scope="col"><%= t :status %></th>
+          <th scope="col"><%= t :action %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @rooms if @rooms.any? %> 
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -10,11 +10,26 @@ en:
       home: "Home"
       help: "Help"
       log in: "Log in"
+      log_in: "Log in"
+      log_out: "Log out"
+  submit: "submit"
+  search: "seach"
+  price_desc: "desc"
+  price_asc: "asc"
+  empty_result: "empty result"
   submit: submit
   search: seach
   price_desc: desc
   price_asc: asc
   empty_result: empty result
+  booking: "Booking"
+  confirm: "Confirm"
+  checkin: "Checkout > checkin"
+  not_blank: "Not Blank"
+  invalid_login: "Invalid login"
+  login: "Please sign in"
+  not_found: "Not found in session"
+  confirm: "Confirm"
   views:
     pagination:
       first: "&laquo; First"
@@ -39,3 +54,16 @@ en:
       invalid_login: "Invalid login"
     users_controller:
       user_not_found: "User not found"
+    users_controller:
+      user_not_found: "User not found"
+  import: "Import"
+  export: "Export"
+  bookings_controller:
+    booking_successfull: "Booking successfull!"
+    booking_fail: "Booking fail!"
+    bookings_controller:
+      booking_successfull: "Booking successfull!"
+      booking_fail: "Booking fail!"
+  booking_successfull: "Booking successfull!"
+  booking_fail: "Booking fail!"
+  delete: delete

@@ -1,0 +1,29 @@
+<h1><%= t :confirm %></h1>
+<section>
+  <div class="container">
+    <div class="card mb-3">
+      <%= render "rooms/room_status", room: @room %>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4">
+            <%= room_image @room %>
+          </div>
+          <div class="col-8">
+            <h5 class="card-title"><%= @room.name %></h5>
+            <%= render @room.room_attributes %>
+            <hr />
+            <p class="card-text"><%= @room.description %></p>
+            <div class="d-flex justify-content-between">
+              <p class="card-text"><small class="text-muted"><%= time_ago_in_words @room.created_at %></small></p>
+              <h4><%= number_to_currency @room.price %>$</h4>
+            </div>
+            <hr />
+            <h1>Checkin: <%= @added["date_in"] if @added %></h1>
+            <h1>Checkout: <%= @added["date_out"] if @added %></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= button_to t(:confirm), bookings_path(room_id: @room), class: "btn btn-success w-100" %>
+  </div>
+</section>

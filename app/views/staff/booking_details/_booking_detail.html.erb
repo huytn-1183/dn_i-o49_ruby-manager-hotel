@@ -1,0 +1,11 @@
+<% room = booking_detail.room %>
+<h6 class="text-primary"><%= booking_detail.id %>.<%= room.name %>
+<span class="badge rounded-pill bg-light text-<%= room_status_color room%>">
+  <%= booking_detail.room.status %>
+</span></h6>
+<p>
+  <strong> <%= t :from %> </strong>
+  <%= l booking_detail.date_in, locale: locale, format: :short %>
+  <strong> <%= t :to %> </strong>
+  <%= l booking_detail.date_in, locale: locale, format: :short %>
+</p>
