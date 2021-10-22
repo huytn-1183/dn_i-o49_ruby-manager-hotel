@@ -1,0 +1,17 @@
+<%= render "admin/bookings/filter" %>
+<hr/>
+<%= render "shared/paginate", object: @bookings %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">user</th>
+      <th scope="col">details</th>
+      <th scope="col">status</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @bookings %>
+  </tbody>
+</table>

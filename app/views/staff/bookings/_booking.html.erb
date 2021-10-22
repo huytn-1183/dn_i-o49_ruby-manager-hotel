@@ -1,0 +1,11 @@
+<tr>
+  <th scope="row"><%= booking.id %></th>
+  <td><%= render booking.user %> </td>
+  <td><%= render booking.booking_details %></td>
+  <td>
+    <span class="badge rounded-pill bg-light text-<%= booking_status_color booking %>">
+      <%= t booking.status %>
+    <span>
+  </td>
+  <td></td>
+</tr>

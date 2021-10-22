@@ -9,12 +9,20 @@ en:
       logo: "Sun"
       home: "Home"
       help: "Help"
-      log in: "Log in"
+      log_in: "Log in"
+      log_out: "Log out"
   submit: submit
   search: seach
   price_desc: desc
   price_asc: asc
   empty_result: empty result
+  booking: "Booking"
+  confirm: "Confirm"
+  checkin: "Checkout > checkin"
+  not_blank: "Not Blank"
+  invalid_login: "Invalid login"
+  login: "Please sign in"
+  not_found: "Not found in session"
   views:
     pagination:
       first: "&laquo; First"
@@ -35,7 +43,8 @@ en:
       remember_me: "Remember me"
       log_in: "Login"
   controllers:
-    sessions_controller:
-      invalid_login: "Invalid login"
     users_controller:
       user_not_found: "User not found"
+    bookings_controller:
+      booking_successfull: "Booking successfull!"
+      booking_fail: "Booking fail!"

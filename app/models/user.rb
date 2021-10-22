@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  has_many :bookings, dependent: :destroy
+  belongs_to :contact, optional: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
+  belongs_to :contact, optional: true
   enum role: {admin: 0, staff: 1, customer: 2}
   attr_accessor :remember_token
 

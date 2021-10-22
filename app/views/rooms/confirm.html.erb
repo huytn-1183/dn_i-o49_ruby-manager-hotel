@@ -1,3 +1,4 @@
+<h1>Confirm</h1>
 <section>
   <div class="container">
     <div class="card mb-3">
@@ -16,10 +17,13 @@
               <p class="card-text"><small class="text-muted"><%= time_ago_in_words @room.created_at %></small></p>
               <h4><%= number_to_currency @room.price %>$</h4>
             </div>
+            <hr />
+            <h1>Checkin: <%= @added["date_in"] if @added %></h1>
+            <h1>Checkout: <%= @added["date_out"] if @added %></h1>
           </div>
-          <%= render "booking_details/form_create" %>
         </div>
       </div>
     </div>
+    <%= button_to t(:confirm), bookings_path(room_id: @room), class: "btn btn-success w-100" %>
   </div>
 </section>

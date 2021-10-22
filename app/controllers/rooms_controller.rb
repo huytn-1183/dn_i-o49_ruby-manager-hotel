@@ -1,11 +1,16 @@
 class RoomsController < ApplicationController
-  before_action :load_rooms, only: %i(index)
-  before_action :load_room, only: %i(show)
+  before_action :load_rooms, except: %i(show)
+  before_action :load_room, only: %i(show confirm)
   before_action :load_attributes
 
   def index; end
 
   def show; end
+
+  def confirm
+    room_id = params[:id]
+    @added = session[room_id]
+  end
 
   private
 

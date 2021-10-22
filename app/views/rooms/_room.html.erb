@@ -13,7 +13,7 @@
       </span>
       <div class="d-flex justify-content-between align-items-center">
         <h6 class="mt-3"><%= number_to_currency(room.price, :locale => locale) %> $</h6>
-        <a href="#" class="stretched-link"><%= t :more %></a>
+        <%= link_to t(:more), room, class: "stretched-link" %>
       </div>
     </div>
   </div>

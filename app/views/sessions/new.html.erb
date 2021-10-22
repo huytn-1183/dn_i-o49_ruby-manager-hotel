@@ -1,9 +1,9 @@
 <section>
   <div class="container">
-  <h1 class="h3 mb-3 fw-normal"><%= t(".please_sign_in")%></h1>
-  <%= form_for :session, url: login_path do |f| %>
-    <%= f.label :email, t(".email") %>
-    <%= f.email_field :email, class: "form-control", placeholder: "name@example.com" %>
+  <h1 class="h3 mb-3 fw-normal"><%= t :login %></h1>
+  <%= form_for :session, url: login_path, html: {class: "d-grid gap-3"} do |f| %>
+    <%= f.label :email, t(".email"), for: "email_input" %>
+    <%= f.email_field :email, class: "form-control", id: "email_input" %>
     <%= f.label :password, t(".password") %>
     <%= link_to t(".forgot_password") %>
     <%= f.password_field :password, class: "form-control", placeholder: t(".password") %>
@@ -11,7 +11,7 @@
       <%= f.check_box :remember_me %>
       <span><%= t ".remember_me" %></span>
     <% end %>
-    <%= f.submit t(".log_in"), class: "w-100 btn btn-outline-primary" %>
+    <%= f.submit t("layouts.header.log_in"), class: "w-100 btn btn-outline-primary" %>
   <% end %>
   </div>
 </section>

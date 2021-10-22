@@ -1,0 +1,8 @@
+<%= form_with  url: :sessions_update, html: {class: "d-grid gap-3"} do |f| %>
+  <%= hidden_field_tag :room_id, @room.id %>
+  <%= f.label :date_in, t(".date_in") %>
+  <%= f.datetime_local_field :date_in, class: "form-control" %>
+  <%= f.label :date_out, t(".date_out") %>
+  <%= f.datetime_local_field :date_out, class: "form-control" %>
+  <%= f.submit t(:booking) , class: "btn btn-primary" %>
+<% end %>

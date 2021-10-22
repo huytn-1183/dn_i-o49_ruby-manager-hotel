@@ -46,3 +46,6 @@ vi:
     formats:
       default: "%d-%m-%Y"
       short: "%d-%m"
+    bookings_controller:
+      booking_successfull: "Dat phong thanh cong!"
+      booking_fail: "Dat phong that bai!"
