@@ -11,7 +11,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.integer :role, null: false, default: 0
       t.references :contact, null: false, foreign_key: true
-
       t.timestamps
     end
   end

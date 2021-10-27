@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <div class="row g-3 mt-3">
+      <div class="col-12">
+        <%= render "bookings/filter" %>
+        <%= render "shared/paginate", object: @bookings %>
+      </div>
+      <div class="col-12">
+        <div class="row g-3">
+          <%= render @bookings %>
+        </div>
+      </div>
+      <div class="col-12">
+        <%= render "shared/paginate", object: @bookings %>
+      </div>
+    </div>
+
+  </div>
+</section>

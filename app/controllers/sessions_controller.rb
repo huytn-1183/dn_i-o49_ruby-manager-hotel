@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :current_user
   def new; end
 
   def create
@@ -19,6 +20,6 @@ class SessionsController < ApplicationController
   def actived_user user
     log_in user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    redirect_to root_url
+    redirect_to session[:return_to] || root_url
   end
 end

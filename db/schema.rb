@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_041621) do
+ActiveRecord::Schema.define(version: 2021_11_01_151250) do
 
   create_table "booking_details", force: :cascade do |t|
     t.date "date_in"
@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 2021_10_23_041621) do
     t.date "payment_date"
     t.integer "status", default: 0, null: false
     t.integer "user_id", null: false
-    t.integer "contact_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["contact_id"], name: "index_bookings_on_contact_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -79,18 +77,14 @@ ActiveRecord::Schema.define(version: 2021_10_23_041621) do
     t.string "image"
     t.string "password_digest"
     t.integer "role", default: 0, null: false
-    t.integer "contact_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
-    t.index ["contact_id"], name: "index_users_on_contact_id"
   end
 
   add_foreign_key "booking_details", "bookings"
   add_foreign_key "booking_details", "rooms"
-  add_foreign_key "bookings", "contacts"
   add_foreign_key "bookings", "users"
   add_foreign_key "room_attribute_groups", "room_attributes"
   add_foreign_key "room_attribute_groups", "rooms"
-  add_foreign_key "users", "contacts"
 end

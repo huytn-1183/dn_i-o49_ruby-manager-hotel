@@ -1,0 +1,11 @@
+<section>
+  <div class="d-grid gap-2">
+    <hr/>
+    <h5><%= t :infomation %>:
+      <span class="text-<%= booking_status_color booking %>"><%= booking.status %></span>
+    </h5>
+    <%= render booking.user %>
+    <h5><%= t :detail %></h5>
+
+    <%= render booking.booking_details %>
+</section>

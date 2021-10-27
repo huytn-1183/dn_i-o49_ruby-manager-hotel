@@ -1,7 +1,5 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
-  belongs_to :contact
-
   enum role: {admin: 0, staff: 1, customer: 2}
   attr_accessor :remember_token
 

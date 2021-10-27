@@ -8,21 +8,17 @@ class Room < ApplicationRecord
   validates :name, presence: true,
             length: {maximum: Settings.digit.length_255}
 
-  scope :room_sort, ->(sort){order(price: sort || :asc)}
-  scope :room_search,
-        ->(keyword){where("rooms.name LIKE ?", "%#{keyword}%")}
-  scope :room_has_attribute,
-        ->(ids){where(room_attributes: {id: ids})}
+  scope :price_sort, ->(sort){order(price: sort || :asc)}
 
-  def self.room_filter prs
-    rooms = Room.all
-    rooms = rooms.room_search(prs[:keyword]) if prs[:keyword]
-    if prs[:attributes] && prs[:attributes].length > 1
-      # collection_select got by default [""]
-      rooms = rooms.joins(:room_attributes)
-                   .room_has_attribute(prs[:attributes])
-    end
-    rooms = rooms.room_sort(prs[:sort]) if prs
-    rooms.page(prs[:page]).per(Settings.digit.length_4)
-  end
+  scope :name_search,
+        ->(keyword){where("name LIKE ?", "%#{keyword}%")}
+
+  scope :has_attributes,
+        ->(ids){joins(:room_attributes).where(room_attributes: {id: ids})}
+
+  scope :pagination_at,
+        ->(page){page(page).per(Settings.digit.length_4)}
+
+  scope :all_as_any,
+        ->{where(status: :available)}
 end

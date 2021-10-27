@@ -1,0 +1,17 @@
+  <div class="row g-2">
+    <%= render booking_detail.room, show_image: false, cardclass: "col-6" %>
+    <div class="col-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-start align-items-start">
+            <label class="me-3"><%= t :checkin %></label>
+            <p><%= booking_detail.date_in %></p>
+          </div>
+          <div class="d-flex justify-content-start align-items-start">
+            <label class="me-3"><%= t :checkout %></label>
+            <p><%= booking_detail.date_out %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

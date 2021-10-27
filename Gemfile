@@ -35,9 +35,10 @@ end
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
 end
+gem "bcrypt", "3.1.12"
 gem "bootstrap", "~> 5.0.2"
 gem "bootstrap5-kaminari-views"
-gem "bcrypt"
 gem "config"
 gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
+gem "jquery-rails"
 gem "kaminari"
