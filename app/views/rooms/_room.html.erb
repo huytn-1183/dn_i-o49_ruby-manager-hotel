@@ -1,9 +1,9 @@
-<div class="col-3">
+<div class=<%= cardclass %>>
   <div class="card h-100">
     <span class="position-absolute top-0 start-100 translate-middle p-2 bg-<%= status_color(room) %> border border-light rounded-circle">
       <span class="visually-hidden"><%= room.status %></span>
     </span>
-    <%= room_image room %>
+    <%= room_image room if show_image %>
     <div class="card-body">
       <h5 class="card-title"><%= room.name %></h5>
       <%= render room.room_attributes %>
