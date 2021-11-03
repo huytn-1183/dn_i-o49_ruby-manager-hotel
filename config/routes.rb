@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :bookings, only: :index
     namespace :admin do
-        resources :bookings, only: :index
+        resources :bookings, only: [:index, :update]
     end
   end
 end

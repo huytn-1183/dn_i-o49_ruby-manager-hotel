@@ -1,10 +1,12 @@
+<%= form_with model: [:admin, booking], method: :put, local: true,  html: { class:"row gy-3" } do |form| %>
 <tr>
   <td><%= render booking.user %> </td>
   <td><%= render booking.booking_details %></td>
   <td>
-    <span class="badge rounded-pill bg-light text-<%= booking_status_color booking %>">
-      <%= t booking.status %>
-    <span>
+      <%= form.select :status, Booking.statuses, { selected: Booking.statuses[booking.status] }, { class: "form-select" }  %>
   </td>
-  <td></td>
+  <td>
+      <%= form.submit t(:submit), class: "btn btn-outline-primary w-100" %>
+  </td>
 </tr>
+<% end %>

@@ -63,6 +63,8 @@ end if RoomAttributeGroup.count < 10
   furniture = Faker::House.furniture
   RoomAttribute.create!(name: furniture)
 end if RoomAttribute.count < 10
+
+if User.count < 3
 User.create!(
     name: "Đàm Vĩnh Biệt",
     email: "dam@gmail.com",
@@ -99,7 +101,8 @@ User.create!(
     password:              password,
     password_confirmation: password
   )
-end if User.count < 3
+ end
+end 
 
 20.times do |n|
   status = rand(4)
