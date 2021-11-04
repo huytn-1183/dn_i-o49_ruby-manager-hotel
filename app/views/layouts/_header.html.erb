@@ -20,6 +20,9 @@
             </ul>
           </li>
           <li class="nav-item"><%= link_to t(:bookings), namespace_bookings_path, class: "nav-link" %></li>
+          <% if is_admin? %>
+            <li class="nav-item"><%= link_to t(:rooms), admin_rooms_path, class: "nav-link" %></li>
+          <% end %>
         <% else %>
           <li class="nav-item" ><%= link_to t(:login), login_path, class: "nav-link" %></li>
         <% end %>

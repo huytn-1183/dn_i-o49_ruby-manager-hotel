@@ -3,3 +3,6 @@ digit:
   length_6: 6
   length_10: 10
   length_255: 255
+export:
+  room:
+    name: "rooms"

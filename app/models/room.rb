@@ -6,7 +6,7 @@ class Room < ApplicationRecord
   enum status: {unavailable: 0, available: 1}
 
   validates :name, presence: true,
-            length: {maximum: Settings.digit.length_255}
+    length: {maximum: Settings.digit.length_255}
 
   scope :price_sort, ->(sort){order(price: sort || :asc)}
 
@@ -19,4 +19,22 @@ class Room < ApplicationRecord
   scope :pagination_at,
         ->(page){page(page).per(Settings.digit.length_4)}
 
+  def self.to_csv fields = column_names, options = {}
+    CSV.generate(options) do |csv|
+      csv << fields
+      all.find_each do |room|
+        csv << room.attributes.values_at(*fields)
+      end
+    end
+  end
+
+  def self.import file
+    ActiveRecord::Base.transaction do
+      CSV.foreach(file.path, headers: true) do |row|
+        room_hash = row.to_hash
+        room = find_or_create_by!(id: room_hash["id"])
+        room.update(room_hash)
+      end
+    end
+  end
 end

@@ -39,3 +39,5 @@ en:
       invalid_login: "Invalid login"
     users_controller:
       user_not_found: "User not found"
+  import: "Import"
+  export: "Export"

@@ -46,3 +46,5 @@ vi:
     formats:
       default: "%d-%m-%Y"
       short: "%d-%m"
+  import: "Nhập"
+  export: "Xuất"
