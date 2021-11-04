@@ -1,7 +1,7 @@
 <section>
   <%= form_with method: :get, html: { class:"row gy-3" } do |form| %>
     <div class="col-12">
-      <%= form.select :attributes, @attributes, {}, { class: "form-select", multiple: true }  %>
+      <%= form.select :attributes, @attributes, { selected: params[:attributes] }, { class: "form-select", multiple: true } %>
     </div>
     <div class="col-12">
       <%= form.select :sort, [[t(:price_desc), :desc], [t(:price_asc), :asc]], {

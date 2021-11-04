@@ -10,6 +10,7 @@ class Admin::BookingsController < ApplicationController
   def load_bookings
     @bookings = Booking.preload(:booking_details)
                        .status_is(filter_params[:status])
+                       .user_name_search(filter_params[:user_name])
                        .pagination_at(filter_params[:page])
     return if @bookings.any?
 
@@ -19,6 +20,7 @@ class Admin::BookingsController < ApplicationController
   # param permit
 
   def filter_params
-    params.permit(:page, :status)
+    # permit and remember filter_params
+    params.permit(:page, :status, :user_name)
   end
 end

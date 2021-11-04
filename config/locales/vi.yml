@@ -46,3 +46,7 @@ vi:
     formats:
       default: "%d-%m-%Y"
       short: "%d-%m"
+  time:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m"

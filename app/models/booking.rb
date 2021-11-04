@@ -13,4 +13,8 @@ class Booking < ApplicationRecord
 
   scope :status_is,
         ->(status){where(status: status) if status.present?}
+
+  def self.user_name_search keyword
+    joins(:user).where("users.name LIKE ?", "%#{keyword}%")
+  end
 end
