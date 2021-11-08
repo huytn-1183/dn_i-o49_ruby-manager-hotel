@@ -13,7 +13,7 @@ class Room < ApplicationRecord
   scope :price_sort, ->(sort){order(price: sort || :asc)}
 
   scope :name_search,
-       ->(keyword){where("rooms.name LIKE ?", "%#{keyword}%")}
+        ->(keyword){where("rooms.name LIKE ?", "%#{keyword}%")}
 
   scope :has_attributes,
         ->(ids){joins(:room_attributes).where(room_attributes: {id: ids})}

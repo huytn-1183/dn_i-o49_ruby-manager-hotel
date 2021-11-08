@@ -22,7 +22,9 @@ class Staff::RoomsController < ApplicationController
   def load_room
     @room = Room.find params[:id]
     return if @room
+  end
 
+  rescue_from ActiveRecord::RecordNotFound do
     flash.now[:warning] = t :not_found
   end
 

@@ -3,12 +3,12 @@ class Staff::BookingsController < ApplicationController
   before_action :load_booking, only: %i(update)
 
   def update
-    if @booking.update booking_params
-      flash[:success] = t :success
-    else
-      flash[:warning] = t :warning
-    end
+    @booking.update! booking_params
     redirect_to admin_bookings_path session[:filter_params]
+  end
+
+  rescue_from ArgumentError do
+    flash[:warning] = t :warning
   end
 
   def index; end
@@ -23,7 +23,16 @@ class Staff::BookingsController < ApplicationController
                        .pagination_at(filter_params[:page])
     return if @bookings.any?
 
-    flash.now[:warning] = t :empty
+    flash[:warning] = t :empty
+  end
+
+  def load_booking
+    @booking = Booking.find params[:id]
+    return if @booking
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:warning] = t :not_found
   end
 
   # param permit

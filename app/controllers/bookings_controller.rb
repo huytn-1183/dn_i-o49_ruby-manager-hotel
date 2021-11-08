@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
     flash[:danger] = t :not_found
     redirect_to root_path
   end
- 
+
   def load_booking
     @booking = Booking.find params[:id]
     return if @booking
@@ -64,20 +64,5 @@ class BookingsController < ApplicationController
 
   def filter_params
     params.permit(:page, :status)
-  end
-
-  def checkin_param
-    session[params[:room_id]]["date_in"]
-  end
-
-  def checkout_param
-    session[params[:room_id]]["date_out"]
-  end
-
-  def check_session_room_id
-    return if session.keys.include? params[:room_id]
-
-    flash[:danger] = t :not_found
-    redirect_to root_path
   end
 end

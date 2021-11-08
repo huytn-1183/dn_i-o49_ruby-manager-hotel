@@ -1,6 +1,4 @@
-vi:
-  en: "English"
-  vi: "Tiếng Việt"
+Vietnamesevi:
   login: "Đăng nhập"
   logout: "Đăng xuất"
   base_title: "Sun khach san"
@@ -15,6 +13,8 @@ vi:
   price_desc: giảm 
   price_asc: tăng  
   empty_result: Không có kêt quả
+  empty: Không có kêt quả
+  not_found: "Không tìm thấy"
   views:
     pagination:
       first: "&laquo; Đầu tiên"
@@ -62,9 +62,9 @@ vi:
     distance_in_words:
       about_x_hours: "%{count} giờ trước"
   profile: "Thông tin"
-    bookings_controller:
-      booking_successfull: "Dat phong thanh cong!"
-      booking_fail: "Dat phong that bai!"
+  bookings_controller:
+    booking_successfull: "Dat phong thanh cong!"
+    booking_fail: "Dat phong that bai!"
   time:
     formats:
       default: "%d-%m-%Y"
@@ -76,7 +76,7 @@ vi:
     distance_in_words:
       about_x_hours: "%{count} giờ trước"
   profile: "Thông tin"
-    bookings_controller:
-      booking_successfull: "Dat phong thanh cong!"
-      booking_fail: "Dat phong that bai!"
+  bookings_controller:
+    booking_successfull: "Dat phong thanh cong!"
+    booking_fail: "Dat phong that bai!"
   delete: delete

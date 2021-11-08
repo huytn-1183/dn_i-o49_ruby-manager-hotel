@@ -11,7 +11,8 @@ class Admin::BookingsController < ApplicationController
       end
       redirect_to admin_bookings_path session[:filter_params]
     end
-  rescue ActiveRecord::RecordInvalid
+  end
+  rescue_from ActiveRecord::RecordInvalid do
     flash[:warning] = t :invalid
   end
 
