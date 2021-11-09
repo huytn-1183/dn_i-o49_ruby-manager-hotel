@@ -36,6 +36,7 @@ group :development, :test do
   gem "factory_bot"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.1"
+  gem "shoulda-matchers", "~> 5.0"
 end
 gem "bcrypt"
 gem "bootstrap", "~> 5.0.2"
