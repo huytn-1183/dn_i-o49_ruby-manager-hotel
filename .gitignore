@@ -70,7 +70,6 @@ yarn-debug.log*
 config/credentials.yml.enc
 config/database.yml
 test/
-spec/
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
