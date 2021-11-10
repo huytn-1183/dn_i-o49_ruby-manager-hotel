@@ -33,15 +33,15 @@ group :development, :test do
   gem "rubocop-rails", "~> 2.3.2", require: false
 end
 group :development, :test do
+  gem "factory_bot"
+  gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.1"
 end
 gem "bcrypt"
 gem "bootstrap", "~> 5.0.2"
 gem "bootstrap5-kaminari-views"
 gem "config"
-gem "factory_bot"
 gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
 gem "kaminari"
-gem "rails-controller-testing"
 gem "simplecov"
 gem "simplecov-rcov"

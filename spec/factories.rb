@@ -7,3 +7,16 @@ FactoryBot.define do
   end
 end
 
+FactoryBot.define do
+  factory :user, class: User do
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
+    password { "alibaba" }
+  end
+end
+
+FactoryBot.define do
+  factory :booking, class: Booking do
+    user { create(:user) }
+  end
+end
