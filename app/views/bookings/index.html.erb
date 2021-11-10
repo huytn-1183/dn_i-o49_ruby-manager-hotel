@@ -1,0 +1,4 @@
+<%= render "admin/bookings/filter" %>
+<hr/>
+<%= render "shared/paginate", object: @bookings %>
+<%= render @bookings if @bookings.any? %>
