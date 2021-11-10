@@ -3,6 +3,8 @@ class RoomsController < ApplicationController
   before_action :load_room, only: %i(show)
   before_action :load_attributes
 
+  load_and_authorize_resource :room_attributes, through: :room_attribute_groups
+
   def index; end
 
   def show; end

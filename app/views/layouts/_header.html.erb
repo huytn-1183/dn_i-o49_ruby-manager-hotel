@@ -7,23 +7,26 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-        <% if logged_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <%= t current_user.role %>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><%= link_to t(:settings), edit_user_registration_path, class: "dropdown-item" %></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><%= button_to t(:logout), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-            </ul>
-          </li>
-          <li class="nav-item"><%= link_to t(:bookings), namespace_bookings_path, class: "nav-link" %></li>
-        <% else %>
-          <li class="nav-item" ><%= link_to t(:login), new_user_session_path, class: "nav-link" %></li>
-        <% end %>
-        <li class="nav-item"><%= link_to t(:en), { locale: :en }, class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to t(:vi), { locale: :vi }, class: "nav-link" %></li>
+          <% if logged_in? %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= t current_user.role %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><%= link_to t(:settings), edit_user_registration_path, class: "dropdown-item" %></li>
+                <% unless current_user.customer? %>
+                  <li><%= link_to t(:users), users_path, class: "dropdown-item" %></li>
+                <% end %>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= button_to t(:logout), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+              </ul>
+            </li>
+            <li class="nav-item"><%= link_to t(:bookings), namespace_bookings_path, class: "nav-link" %></li>
+          <% else %>
+            <li class="nav-item" ><%= link_to t(:login), new_user_session_path, class: "nav-link" %></li>
+          <% end %>
+          <li class="nav-item"><%= link_to t(:en), { locale: :en }, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t(:vi), { locale: :vi }, class: "nav-link" %></li>
         </ul>
       </div>
     </div>

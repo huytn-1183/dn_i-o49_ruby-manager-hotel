@@ -1,3 +1,4 @@
+<% if can? :read, user %>
  <div class="card">
    <div class="card-body">
      <div class="d-flex justify-content-start align-items-start">
@@ -14,3 +15,6 @@
      </div>
    </div>
  </div>
+<% else %>
+  <small><%= t :access_denied %></small>
+<% end %>
