@@ -1,0 +1,46 @@
+<section>
+  <div class="container my-5">
+    <div class="row">
+
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "col-5" }) do |f| %>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-danger"><%= t :change_your_password %></h3>
+          </div>
+          <div class="card-body d-grid gap-3">
+
+            <%= f.hidden_field :reset_password_token %>
+
+            <div class="field">
+              <%= f.label :password, t(:new_password), class: "form-label" %><br />
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> <%= t :characters_minimum %>)</em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="field">
+              <%= f.label t(:password_confirmation), t(:confirm_new_password), class: "form-label" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t(:change_my_password), class: "btn btn-outline-danger" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-7 align-self-center px-5">
+        <div>
+          <h1 class="display-1 text-danger"><strong><%= t :welcome %></strong></h1>
+          <h2><%= t :base_title %></h2>
+          <p><%= t :our_bussiness %>
+        <%= render "users/shared/links" %>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>

@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-light bg-light navbar-expand-lg mb-3">
     <div class="container">
-      <%= link_to t(:home), root_path, class: "navbar-brand" %>
+      <%= link_to t(:home), root_path, class: "navbar-brand text-danger" %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,15 +13,14 @@
               <%= t current_user.role %>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><%= link_to t(".profile"), current_user, class: "dropdown-item" %></li>
-              <li><%= link_to t(".settings"), "#", class: "dropdown-item" %></li>
+              <li><%= link_to t(:settings), edit_user_registration_path, class: "dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
-              <li><%= button_to t(:logout), logout_path, method: :delete, class: "dropdown-item" %></li>
+              <li><%= button_to t(:logout), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
             </ul>
           </li>
           <li class="nav-item"><%= link_to t(:bookings), namespace_bookings_path, class: "nav-link" %></li>
         <% else %>
-          <li class="nav-item" ><%= link_to t(:login), login_path, class: "nav-link" %></li>
+          <li class="nav-item" ><%= link_to t(:login), new_user_session_path, class: "nav-link" %></li>
         <% end %>
         <li class="nav-item"><%= link_to t(:en), { locale: :en }, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to t(:vi), { locale: :vi }, class: "nav-link" %></li>

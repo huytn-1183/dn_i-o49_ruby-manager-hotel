@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_023620) do
+ActiveRecord::Schema.define(version: 2021_11_11_020303) do
 
   create_table "booking_details", force: :cascade do |t|
-    t.datetime "date_in"
-    t.datetime "date_out"
+    t.date "date_in"
+    t.date "date_out"
     t.integer "days_range"
     t.integer "room_id", null: false
     t.integer "booking_id", null: false
@@ -80,6 +80,12 @@ ActiveRecord::Schema.define(version: 2021_11_03_023620) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "booking_details", "bookings"
