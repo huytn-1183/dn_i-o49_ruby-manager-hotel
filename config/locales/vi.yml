@@ -1,20 +1,18 @@
 vi:
-  en: "English"
-  vi: "Tiếng Việt"
   login: "Đăng nhập"
   logout: "Đăng xuất"
-  base_title: "Sun khach san"
+  base_title: "Khách sạn Sun"
   layouts:
     header:
       logo: "Sun"
       home: "Trang chủ"
       help: "Trợ giúp"
       log in: "Đăng nhập"
-  submit: gửi
-  search: tìm kiếm 
-  price_desc: giảm 
-  price_asc: tăng  
-  empty_result: Không có kêt quả
+  submit: "gửi"
+  search: "tìm kiếm"
+  price_desc: "giảm"
+  price_asc: "tăng"
+  empty_result: "Không có kêt quả"
   views:
     pagination:
       first: "&laquo; Đầu tiên"
@@ -39,6 +37,13 @@ vi:
       invalid_login: "Danh nhap that bai!"
     users_controller:
       user_not_found: "Nguoi tim thay nguoi dung"
+  email: "Email"
+  password: "Password"
+  password_confirmation: "Xác nhận mật khẩu"
+  current_password: "Mật khẩu hiện tại"
+  update: "Cập nhật"
+  cancel_my_account: "Xóa tài khoản"
+
   date:
     month_names: "Tháng"
     abbr_month_names:
@@ -46,3 +51,4 @@ vi:
     formats:
       default: "%d-%m-%Y"
       short: "%d-%m"
+  change_my_password: "Thay đổi"

@@ -1,6 +1,4 @@
 en:
-  en: "English"
-  vi: "Tiếng Việt"
   login: "Log in"
   logout: "Log out"
   base_title: "Sun Hotel"
@@ -39,3 +37,23 @@ en:
       invalid_login: "Invalid login"
     users_controller:
       user_not_found: "User not found"
+  email: "Email"
+  password: "Password"
+  password_confirmation: "Password comfirmation"
+  current_password: "Current password"
+  update: "Update"
+  cancel_my_account: "Cancel my account"
+  date:
+    month_names: "Tháng"
+    abbr_month_names:
+      -
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m"
+  sign_in: "sign in"
+  remember_me: "Remember me"
+  phone: "Phone"
+  name: "Name"
+  our_bussiness: "As a Digital Creative Studio, Sun* always prioritize the spirit of owning the products, thinking creatively in any project to bring the most awesome experience to end-users. With two service lines namely Creative & Engineering and Talent Platform, Sun* has always been step by step with technology creating great value for society."
+  change_my_password: "Change my password"
+  send_me_reset_password_instructions: "Send me reset password instructions"

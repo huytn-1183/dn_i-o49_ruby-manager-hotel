@@ -1,6 +1,12 @@
-@import "bootstrap";
-
-/* ROOT */
+/*
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap/scss/bootstrap";
 body {
   font-family: "Roboto", sans-serif;
+}
+
+p {
+  max-width: 400px;
 }
