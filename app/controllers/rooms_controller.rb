@@ -26,13 +26,12 @@ class RoomsController < ApplicationController
   end
 
   def load_rooms
-    attrs = filter_params[:attributes] || []
-    @rooms = Room.available
-                 .price_sort(filter_params[:sort])
-                 .name_search(filter_params[:keyword])
-                 .pagination_at(filter_params[:page])
+    # ransack
+    @searcher = Room.ransack(params[:search_params])
+    @rooms = @searcher.result
+                      .available
+                      .pagination_at(filter_params[:page])
 
-    @rooms = @rooms.has_attributes attrs if attrs.length > 1
     return if @rooms.any?
 
     flash.now[:danger] = t :empty

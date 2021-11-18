@@ -1,16 +1,9 @@
 <section>
-  <%= form_with method: :get, html: { class:"row gy-3" } do |form| %>
-    <div class="col-12">
-      <%= form.select :attributes, @attributes, {}, { class: "form-select", multiple: true }  %>
-    </div>
-    <div class="col-12">
-      <%= form.select :sort, [[t(:price_desc), :desc], [t(:price_asc), :asc]], {
-        selected: params[:sort]
-      }, { class: "form-select" } %>
-    </div>
+  <%= search_form_for @searcher, html: { class:"row gy-3" } do |form| %>
     <div class="col-12">
       <div class="input-group">
-        <%= form.text_field :keyword, class: "form-control", value: params[:keyword] %>
+        <%= form.search_field :search_simple_cont, class: "form-control",
+          value: (params[:search_params][:search_simple_cont] if params[:search_params]) %>
       </div>
     </div>
     <div class="col-12">
