@@ -19,4 +19,13 @@ class Room < ApplicationRecord
 
   scope :pagination_at,
         ->(page){page(page).per(Settings.digit.length_4)}
+
+  ransack_alias :search_simple,
+                :room_attributes_name_or_name_or_description_or_level
+
+  # enum search
+  # refer: https://stackoverflow.com/questions/37257835/searching-on-an-enum-field-with-ransack
+  ransacker :level, formatter: proc{|v| levels[v]} do |parent|
+    parent.table[:level]
+  end
 end
