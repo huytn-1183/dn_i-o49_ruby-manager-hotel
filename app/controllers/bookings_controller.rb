@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   before_action :load_bookings, only: %i(index)
 
+  load_and_authorize_resource :booking_details
+
   def index; end
 
   private
@@ -20,5 +22,11 @@ class BookingsController < ApplicationController
 
   def filter_params
     params.permit(:page, :status)
+  end
+
+  # override
+  # for custom ability
+  def current_ability
+    @current_ability = CustomerAbility.new(current_user)
   end
 end

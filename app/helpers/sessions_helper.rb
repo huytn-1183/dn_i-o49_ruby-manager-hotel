@@ -30,7 +30,7 @@ module SessionsHelper
   end
 
   def forget user
-    return unless user.present?
+    return unless user
 
     user.forget
     cookies.delete(:user_id)

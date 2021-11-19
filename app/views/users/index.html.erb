@@ -1,0 +1,8 @@
+<section>
+  <div class="container">
+    <div class="d-grid gap-3">
+      <%= render(@users, cardclass: "col-3", show_image: true) if @users.any? %>
+      <%= render "shared/paginate", object: @users %>
+    </div>
+  </div>
+</section>

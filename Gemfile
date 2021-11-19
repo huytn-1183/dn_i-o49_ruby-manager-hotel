@@ -41,6 +41,7 @@ group :development, :test do
 end
 gem "bcrypt"
 gem "bootstrap5-kaminari-views"
+gem "cancancan"
 gem "config"
 gem "devise"
 gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
