@@ -2,7 +2,17 @@
   <div class="container">
     <div class="row g-3 mt-3">
       <div class="col-4">
-        <%= render "rooms/filter" %>
+        <%= react_component("room/list/Filter",
+                            params: params,
+                            t: {
+                              simple_search: t(:simple_search),
+                              attribute_search: t(:attribute_search),
+                              search: t(:search),
+                              from: t(:from),
+                              to: t(:to)
+                            },
+                            attributes: @attributes
+                           ) %>
       </div>
       <div class="col-8">
         <div class="row g-3">

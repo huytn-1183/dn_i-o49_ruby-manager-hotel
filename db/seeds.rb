@@ -1,3 +1,4 @@
+# ROOM
 20.times do |n|
   image = Faker::LoremFlickr.image + "?random=" + rand(1000).to_s
   price = Faker::Commerce.price
@@ -14,6 +15,8 @@
     name: name,
   )
 end if Room.count < 20
+
+# USER
 User.create!(
     name: "Đàm Vĩnh Biệt",
     email: "dam@gmail.com",
@@ -38,55 +41,7 @@ User.create!(
     password_confirmation: "truongduc910",
     role: 0
 )
-10.times do |n|
-  furniture = Faker::House.furniture
-  RoomAttribute.create!(name: furniture)
-end if RoomAttribute.count < 10
 
-
-rooms = Room.all
-rooms.each do |room| 
-  attributes = RoomAttribute.order(Arel.sql("RANDOM()")).first rand(5)
-  attributes.each do |attribute|
-    RoomAttributeGroup.create!(room_id:room.id, room_attribute_id:attribute.id)
-  end
-end if RoomAttributeGroup.count < 10
-
-10.times do |n|
-  status = rand(4)
-  booking = Booking.create!(status: status)
-  rand(10).times do 
-    date_in = rand(10.day).seconds.ago
-    date_out = date_in + rand(5.hours)
-    booking.booking_details.create!(date_in: date_in, date_out: date_out)
-  end
-  furniture = Faker::House.furniture
-  RoomAttribute.create!(name: furniture)
-end if RoomAttribute.count < 10
-User.create!(
-    name: "Đàm Vĩnh Biệt",
-    email: "dam@gmail.com",
-    phone: "0332813079",
-    password:              "12345678",
-    password_confirmation: "12345678",
-    role: 2
-)
-User.create!(
-    name: "Nguyễn Huỳnh Thanh Đạt",
-    email: "dat@gmail.com",
-    phone: "0332813078",
-    password:              "12345678",
-    password_confirmation: "12345678",
-    role: 1
-)
-User.create!(
-    name: "Trần Ngọc Huy",
-    email: "truongduchuy910@gmail.com",
-    phone: "0332813077",
-    password:              "truongduc910",
-    password_confirmation: "truongduc910",
-    role: 0
-)
 3.times do |n|
   name  = Faker::Name.name
   email = Faker::Internet.email
@@ -101,6 +56,24 @@ User.create!(
   )
 end if User.count < 3
 
+
+
+# ROOM ATTRIBUTE
+10.times do |n|
+  furniture = Faker::House.unique.furniture
+  RoomAttribute.create(name: furniture)
+end if RoomAttribute.count < 10
+
+# ROOM ATTRIBUTE GROUP
+rooms = Room.all
+rooms.each do |room| 
+  attributes = RoomAttribute.order(Arel.sql("RANDOM()")).first rand(5)
+  attributes.each do |attribute|
+    RoomAttributeGroup.create!(room_id:room.id, room_attribute_id:attribute.id)
+  end
+end
+
+# BOOKING
 20.times do |n|
   status = rand(4)
   user = User.order(Arel.sql("RANDOM()")).first

@@ -28,7 +28,7 @@ class RoomsController < ApplicationController
   def load_rooms
     # ransack
     @searcher = Room.ransack(params[:search_params])
-    @rooms = @searcher.result
+    @rooms = @searcher.result(distinct: true)
                       .available
                       .pagination_at(filter_params[:page])
 

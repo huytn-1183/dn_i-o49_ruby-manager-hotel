@@ -71,6 +71,10 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.1)
@@ -95,6 +99,7 @@ GEM
     config (3.1.0)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
+    connection_pool (2.2.5)
     crass (1.0.6)
     deep_merge (1.2.1)
     devise (4.8.0)
@@ -142,6 +147,7 @@ GEM
       dry-initializer (~> 3.0)
       dry-schema (~> 1.8, >= 1.8.0)
     erubi (1.10.0)
+    execjs (2.8.1)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     ffi (1.15.4)
@@ -241,6 +247,12 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    react-rails (2.6.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -366,6 +378,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   rails-controller-testing
   ransack
+  react-rails
   rspec-rails (~> 4.0.1)
   rubocop (~> 0.74.0)
   rubocop-checkstyle_formatter
